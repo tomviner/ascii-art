@@ -1,8 +1,6 @@
 import board
 
 characters = list(" .-o*=/\|%#@&")
-#~ characters = [" ", ".", "-", "&", "#", "*"]
-grid = board.Board((64, 64))
 
 def map_brightness_to_char(brightness):
     n_slots = len(characters)
@@ -13,14 +11,12 @@ def map_brightness_to_char(brightness):
         slot = int(brightness/slot_width)
     return characters[slot]
 
-def put_pixel_on_grid(coord, brightness):
+def put_pixel_on_grid(grid, coord, brightness):
     character = map_brightness_to_char(brightness)
     grid[coord] = character
 
-def draw_grid():
-    grid.draw(use_borders=False)
-
 if __name__ == '__main__':
+    grid = board.Board((8, 8))
     art = """\
    ##
   #--#
@@ -38,6 +34,6 @@ if __name__ == '__main__':
             elif char == "-":
                 brightness= 0.4
 
-            put_pixel_on_grid((x,y), brightness)
+            put_pixel_on_grid(grid, (x,y), brightness)
 
-    draw_grid()
+    grid.draw(use_borders=False)
