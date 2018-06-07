@@ -13,7 +13,8 @@ def map_brightness_to_char(brightness):
 
 def put_pixel_on_grid(grid, coord, brightness):
     character = map_brightness_to_char(brightness)
-    grid[coord] = character
+    if character != " ":
+        grid[coord] = character
 
 if __name__ == '__main__':
     grid = board.Board((8, 8))
