@@ -1,7 +1,8 @@
 import board
 
-characters = [" ", ".", "-", "&", "#", "*"]
-grid = board.Board((8, 8))
+characters = list(" .-o*=/\|%#@&")
+#~ characters = [" ", ".", "-", "&", "#", "*"]
+grid = board.Board((64, 64))
 
 def map_brightness_to_char(brightness):
     n_slots = len(characters)
@@ -33,7 +34,7 @@ if __name__ == '__main__':
             if char == " ":
                 brightness = 0
             elif char == "#":
-                brightness = 0.85
+                brightness = 0.8
             elif char == "-":
                 brightness= 0.4
 
