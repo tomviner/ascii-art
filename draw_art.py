@@ -1,6 +1,6 @@
 import board
 
-characters = list(" .-o*=/\|%#@&")
+characters = list(" .-o*=/\\|%#@&")
 
 def map_brightness_to_char(brightness):
     n_slots = len(characters)
